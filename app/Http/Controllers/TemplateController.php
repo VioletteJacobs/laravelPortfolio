@@ -6,6 +6,7 @@ use App\Models\AboutInfo;
 use App\Models\AboutP2;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Footer;
 use App\Models\Hero;
 use App\Models\Mail;
 use App\Models\Navbar;
@@ -40,7 +41,8 @@ class TemplateController extends Controller
         $DBMail = Mail::all();
         $DBPhone = Phone::all();
         $DBSocial = Social::all();
+        $DBFooter = Footer::all();
 
-        return view ("welcome",compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial"));
+        return view ("welcome",compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter"));
     }
 }

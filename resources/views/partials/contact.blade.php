@@ -19,7 +19,7 @@
                 <h3>{{$DBTitreContact[0]->title}}</h3>
                 <div class="social-links">
                   @foreach ($DBSocial as $item)
-                  <a href="#" class="twitter"><i class="{{$item->icon}}"></i></a>
+                  <a href="{{$item->href}}" class="{{$item->class}}"><i class="{{$item->icon}}"></i></a>
                       
                   @endforeach
                 </div>

@@ -36,6 +36,8 @@ class DatabaseSeeder extends Seeder
             SocialSeeder::class,
             MailSeeder::class,
             PhoneSeeder::class,
+
+            FooterSeeder::class
         ]);
     }
 }

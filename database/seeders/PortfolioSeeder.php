@@ -18,10 +18,10 @@ class PortfolioSeeder extends Seeder
             [
                 [
                     "filter" => "filter-app",
-                    "img" => "assets/img/portfolio/portfolio-1.jpg",
+                    "img" => "assets/img/portfolio/portfolio-2.jpg",
                     "title" => "App 1",
                     "p" => "App",
-                    "href1" => "assets/img/portfolio/portfolio-1.jpg",
+                    "href1" => "assets/img/portfolio/portfolio-9.jpg",
                     "href2" => "portfolio-details.html",
 
                 ],
