@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             NavbarSeeder::class,
             HeroSeeder::class,
             TitreSeeder::class,
+            AboutInfoSeeder::class,
+            AboutP2Seeder::class,
+            SkillSeeder::class,
         ]);
     }
 }
