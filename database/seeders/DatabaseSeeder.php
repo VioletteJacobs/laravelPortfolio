@@ -32,7 +32,10 @@ class DatabaseSeeder extends Seeder
 
             PortfolioSeeder::class,
 
-            
+            TitreContactSeeder::class,
+            SocialSeeder::class,
+            MailSeeder::class,
+            PhoneSeeder::class,
         ]);
     }
 }

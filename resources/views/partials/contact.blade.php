@@ -15,29 +15,34 @@
           <div class="row">
             <div class="col-md-12">
               <div class="info-box">
-                <i class="bx bx-share-alt"></i>
-                <h3>Social Profiles</h3>
+                <i class="{{$DBTitreContact[0]->icon}}"></i>
+                <h3>{{$DBTitreContact[0]->title}}</h3>
                 <div class="social-links">
-                  <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                  <a href="#" class="google-plus"><i class="icofont-skype"></i></a>
-                  <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                  @foreach ($DBSocial as $item)
+                  <a href="#" class="twitter"><i class="{{$item->icon}}"></i></a>
+                      
+                  @endforeach
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="info-box mt-4">
-                <i class="bx bx-envelope"></i>
-                <h3>Email Me</h3>
-                <p>contact@example.com</p>
+                <i class="{{$DBTitreContact[1]->icon}}"></i>
+                <h3>{{$DBTitreContact[1]->title}}</h3>
+
+                @foreach ($DBMail as $item)
+                <p>{{$item->mail}}</p>
+                @endforeach
               </div>
             </div>
             <div class="col-md-6">
               <div class="info-box mt-4">
-                <i class="bx bx-phone-call"></i>
-                <h3>Call Me</h3>
-                <p>+1 5589 55488 55</p>
+                <i class="{{$DBTitreContact[2]->icon}}"></i>
+                <h3>{{$DBTitreContact[2]->title}}</h3>
+
+                @foreach ($DBPhone as $item)
+                <p>{{$item->phone}}</p>                   
+                @endforeach
               </div>
             </div>
           </div>

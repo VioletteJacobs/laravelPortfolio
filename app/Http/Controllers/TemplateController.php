@@ -7,13 +7,17 @@ use App\Models\AboutP2;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Hero;
+use App\Models\Mail;
 use App\Models\Navbar;
+use App\Models\Phone;
 use App\Models\Portfolio;
 use App\Models\ResumeTitre;
 use App\Models\Service;
 use App\Models\Skill;
+use App\Models\Social;
 use App\Models\Sumary;
 use App\Models\Titre;
+use App\Models\TitreContact;
 use Illuminate\Http\Request;
 
 class TemplateController extends Controller
@@ -32,7 +36,11 @@ class TemplateController extends Controller
         $DBExperiences = Experience::all();
         $DBServices = Service::all();
         $DBPortfolio = Portfolio::all();
+        $DBTitreContact = TitreContact::all();
+        $DBMail = Mail::all();
+        $DBPhone = Phone::all();
+        $DBSocial = Social::all();
 
-        return view ("welcome",compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio"));
+        return view ("welcome",compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial"));
     }
 }
