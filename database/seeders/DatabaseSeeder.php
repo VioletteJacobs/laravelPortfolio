@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             NavbarSeeder::class,
             HeroSeeder::class,
+            TitreSeeder::class,
         ]);
     }
 }
