@@ -20,6 +20,7 @@ use App\Models\Sumary;
 use App\Models\Titre;
 use App\Models\TitreContact;
 use Illuminate\Http\Request;
+use Symfony\Polyfill\Intl\Idn\Info;
 
 class BackController extends Controller
 {
@@ -116,10 +117,19 @@ class BackController extends Controller
     // edit & update
     public function editNav($id){
         $edit = Navbar::find($id);
-        return view ("pages.backoffice.editNav", compact('edit'));
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editNav", compact('edit', "DBFooter", "DBSocial"));
     }
 
     public function updateNav(Request $request, $id){
+
+        $validation = $request->validate([
+            "li" => "required|min:5|max:50",
+            "href" => "required|max:100"
+        ]);
+        
         $update = Navbar::find($id);
         $update->li = $request->li;
         $update->href = $request->href;
@@ -127,5 +137,207 @@ class BackController extends Controller
         return redirect('/');
 
     }
+    public function editTitre($id){
+        $edit = Titre::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editTitre", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateTitre(Request $request, $id){
+
+        $validation = $request->validate([
+            "titre" => "required|min:5|max:100",
+            "span" => "required|max:100",
+            "p" => "required|max:500",
+        ]);
+        
+        $update = Titre::find($id);
+
+        $update->titre = $request->titre;
+        $update->span = $request->span;
+        $update->p = $request->p;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editInfo($id){
+        $edit = AboutInfo::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editinfo", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateInfo(Request $request, $id){
+
+        $validation = $request->validate([
+            "icon" => "required|min:5|max:50",
+            "titre" => "required|max:50",
+            "info" => "required|max:100",
+        ]);
+        
+        $update = AboutInfo::find($id);
+        
+        $update->titre = $request->titre;
+        $update->icon = $request->icon;
+        $update->info = $request->info;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editAbout($id){
+        $edit = AboutP2::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editAbout", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateAbout(Request $request, $id){
+
+        $validation = $request->validate([
+            "icon" => "required|min:5|max:50",
+            "color" => "required|max:50",
+            "span" => "required|max:50",
+            "strong" => "required|max:50",
+            "p" => "required|max:50",
+        ]);
+        
+        $update = AboutP2::find($id);
+        
+        $update->icon = $request->icon;
+        $update->color = $request->color;
+        $update->strong = $request->strong;
+        $update->span = $request->span;
+        $update->p = $request->p;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editSumary($id){
+        $edit = Sumary::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editSumary", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateSumary(Request $request, $id){
+
+        $validation = $request->validate([
+            "name" => "required|min:5|max:50",
+            "adresse" => "required|max:50",
+            "phone" => "required|max:50",
+            "mail" => "required|max:50",
+            "p" => "required|max:500",
+        ]);
+        
+        $update = Sumary::find($id);
+        
+        $update->name = $request->name;
+        $update->adresse = $request->adresse;
+        $update->phone = $request->phone;
+        $update->mail = $request->mail;
+        $update->p = $request->p;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function updateSkill(Request $request, $id){
+
+        $validation = $request->validate([
+            "language" => "required|min:5|max:50",
+            "val" => "required|max:10",
+            "valuenow" => "required",
+
+        ]);
+        
+        $update = Skill::find($id);
+        
+        $update->language = $request->language;
+        $update->val = $request->val;
+        $update->valuenow = $request->valuenow;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editSkill($id){
+        $edit = Skill::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editSkill", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function editEducation($id){
+        $edit = Education::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editEducation", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateEducation(Request $request, $id){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:100",
+            "years" => "required|max:100",
+            "school" => "required|max:100",
+            "p" => "required|max:500",
+        ]);
+        
+        $update = Education::find($id);
+        
+        $update->title = $request->title;
+        $update->years = $request->years;
+        $update->school = $request->school;
+        $update->p = $request->p;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editExperience($id){
+        $edit = Experience::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editExperience", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateExperience(Request $request, $id){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:100",
+            "years" => "required|max:100",
+            "name" => "required|max:100",
+            "task1" => "required|max:200",
+            "task2" => "required|max:200",
+            "task3" => "required|max:200",
+            "task4" => "required|max:200",
+        ]);
+        
+        $update = Experience::find($id);
+        
+        $update->title = $request->title;
+        $update->years = $request->years;
+        $update->name = $request->name;
+        $update->task1 = $request->task1;
+        $update->task2 = $request->task2;
+        $update->task3 = $request->task3;
+        $update->task4 = $request->task4;
+
+        $update->save();
+        return redirect('/');
+
+    }
+
     
 }

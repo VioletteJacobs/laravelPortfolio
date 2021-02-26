@@ -70,7 +70,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-titre/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -106,7 +106,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-info/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -148,7 +148,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-about/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -186,7 +186,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-skill/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -229,7 +229,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-sumary/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -269,7 +269,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-education/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -314,7 +314,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-experience/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -352,7 +352,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-service/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -396,7 +396,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-portfolio/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -430,7 +430,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-mail/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
@@ -464,7 +464,7 @@
                         </form>
                     </td>
                     <td>
-                        <a href="/edit-nav/{{$item->id}}" class="btn btn-warning">Edit</a>
+                        <a href="/edit-phone/{{$item->id}}" class="btn btn-warning">Edit</a>
                     </td>
                 </tr>
                 @endforeach
