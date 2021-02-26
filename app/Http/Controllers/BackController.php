@@ -338,6 +338,110 @@ class BackController extends Controller
         return redirect('/');
 
     }
+    public function editService($id){
+        $edit = Service::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editService", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateService(Request $request, $id){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:50",
+            "icon" => "required|max:50",
+            "p" => "required|max:500",
+        ]);
+        
+        $update = Service::find($id);
+        
+        $update->title = $request->title;
+        $update->icon = $request->icon;
+        $update->p = $request->p;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editPhone($id){
+        $edit = Phone::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editPhone", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updatePhone(Request $request, $id){
+
+        $validation = $request->validate([
+            "phone" => "required",
+
+        ]);
+        
+        $update = Phone::find($id);
+        
+        $update->phone = $request->phone;
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editMail($id){
+        $edit = Mail::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editMail", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateMail(Request $request, $id){
+
+        $validation = $request->validate([
+            "mail" => "required",
+        ]);
+        
+        $update = Mail::find($id);
+        
+        $update->mail = $request->mail;
+
+
+        $update->save();
+        return redirect('/');
+
+    }
+    public function editPortfolio($id){
+        $edit = Portfolio::find($id);
+
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editPortfolio", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updatePortfolio(Request $request, $id){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:20",
+            "img" => "required|max:90",
+            "p" => "required|max:100",
+            "filter" => "required|max:30",
+            "href1" => "required|max:90",
+            "href2" => "required|max:90",
+        ]);
+        
+        $update = Portfolio::find($id);
+        
+        $update->title = $request->title;
+        $update->img = $request->img;
+        $update->p = $request->p;
+        $update->href1 = $request->href1;
+        $update->href2 = $request->href2;
+        $update->filter = $request->filter;
+
+        $update->save();
+        return redirect('/');
+
+    }
 
     
 }
