@@ -46,12 +46,74 @@ class BackController extends Controller
        return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter")); 
     }
 
+
+
+    // Destroy
     public function destroyNav($id){
         $destroy = Navbar::find($id);
         $destroy->delete();
         return redirect()->back();
     }
+    public function destroyTitre($id){
+        $destroy = Titre::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyInfo($id){
+        $destroy = AboutInfo::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyAboutP2($id){
+        $destroy = AboutP2::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroySkill($id){
+        $destroy = Skill::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroySumary($id){
+        $destroy = Sumary::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyEducation($id){
+        $destroy = Education::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyExperience($id){
+        $destroy = Experience::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyService($id){
+        $destroy = Service::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyPortfolio($id){
+        $destroy = Portfolio::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyMail($id){
+        $destroy = Mail::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyPhone($id){
+        $destroy = Phone::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    
 
+
+
+    // edit & update
     public function editNav($id){
         $edit = Navbar::find($id);
         return view ("pages.backoffice.editNav", compact('edit'));

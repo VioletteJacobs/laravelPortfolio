@@ -64,7 +64,7 @@
                     <td>{{$item->span}}</td>
                     <td>{{$item->p}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-titre/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -100,7 +100,7 @@
                     <td>{{$item->titre}}</td>
                     <td>{{$item->info}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-info/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -142,7 +142,7 @@
                     <td>{{$item->strong}}</td>
                     <td>{{$item->p}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-aboutp2/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -180,7 +180,7 @@
                     <td>{{$item->val}}</td>
                     <td>{{$item->valuenow}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-skill/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -223,7 +223,7 @@
                     <td>{{$item->phone}}</td>
 
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-sumary/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -263,7 +263,7 @@
                     <td>{{$item->school}}</td>
                     <td>{{$item->p}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-education/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -308,7 +308,7 @@
                     <td>{{$item->task3}}</td>
                     <td>{{$item->task4}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-experience/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -346,7 +346,7 @@
                     <td>{{$item->titre}}</td>
                     <td>{{$item->p}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-service/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -390,7 +390,7 @@
                     <td>{{$item->href1}}</td>
                     <td>{{$item->href2}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-portfolio/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -424,7 +424,7 @@
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->mail}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-mail/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
@@ -458,7 +458,7 @@
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->phone}}</td>
                     <td> 
-                        <form action="/delete-nav/{{$item->id}}" method="POST">
+                        <form action="/delete-phone/{{$item->id}}" method="POST">
                             @csrf
                             <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
