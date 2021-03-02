@@ -13,7 +13,7 @@
           <h3 class="resume-title">{{$DBResumeTitre[0]->titre}}</h3>
           @foreach ($DBSumary as $item)
             <div class="resume-item pb-0">
-              <h4>{{$item->name}}</h4>
+              <h4 style="color: #ffb727">{{$item->name}}</h4>
               <p><em>{{$item->p}}</em></p>
               <p>
               <ul>

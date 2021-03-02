@@ -301,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top right;
+  /* background: url("../img/hero-bg.jpg") top right; */
   background-size: cover;
   position: relative;
 }
@@ -537,7 +537,7 @@ section {
 .about .content ul i {
   font-size: 20px;
   padding-right: 2px;
-  color: #ffb727;
+  /* color: #ffb727; */
 }
 
 .about .content .count-box {
@@ -647,7 +647,7 @@ section {
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffb727;
+  /* color: #ffb727; */
   margin-bottom: 10px;
 }
 

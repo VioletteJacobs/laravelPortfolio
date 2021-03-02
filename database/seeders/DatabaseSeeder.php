@@ -40,6 +40,8 @@ class DatabaseSeeder extends Seeder
             FooterSeeder::class,
 
             ColorSeeder::class,
+
+            BgSeeder::class,
         ]);
     }
 }

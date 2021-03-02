@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutInfo;
 use App\Models\AboutP2;
+use App\Models\Bg;
 use App\Models\Color;
 use App\Models\Education;
 use App\Models\Experience;
@@ -30,6 +31,7 @@ class BackController extends Controller
         $DBNav = Navbar::all();
         $DBHero = Hero::all();
         $DBTitre = Titre::all();
+        $DBBG = Bg::all();
         $DBAboutInfo = AboutInfo::all();
         $DBAboutP2 = AboutP2::all();
         $DBSkills = Skill::all();
@@ -46,7 +48,7 @@ class BackController extends Controller
         $DBFooter = Footer::all();
         $DBCouleur = Color::all();
 
-       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBCouleur")); 
+       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBCouleur")); 
     }
 
 
