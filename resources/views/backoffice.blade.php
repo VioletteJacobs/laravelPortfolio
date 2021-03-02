@@ -5,7 +5,7 @@
     <span>Vous pourrez y modifier les éléments, en créer de nouveaux, modifier ou supprimer les anciens.</span>
 </section>
 {{-- nav --}}
-<section>
+<section id="nav">
     <h2 class="text-center">La barre de navigation : </h2>
     <div>
         <table class="table table-dark">
@@ -42,7 +42,7 @@
     <a href="/createNav" class="btn btn-success text-center">Créer</a>
 </section>
 {{-- titre --}}
-<section>
+<section id="titre">
     <h2 class="text-center">Les titres des sections : </h2>
     <div>
         <table class="table table-dark">
@@ -80,7 +80,7 @@
     </div>
     <a href="/createTitre" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="info">
     <h2 class="text-center">Les informations personnelles </h2>
     <div>
         <table class="table table-dark">
@@ -116,7 +116,7 @@
     </div>
     <a href="/createInfo" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="perso">
     <h2 class="text-center">Des anecdotes à propos :</h2>
     <div>
         <table class="table table-dark">
@@ -158,7 +158,7 @@
     </div>
     <a href="/createAbout" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section class="competences">
     <h2 class="text-center">Les compétences:</h2>
     <div>
         <table class="table table-dark">
@@ -196,7 +196,7 @@
     </div>
     <a href="/createSkill" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="cv">
     <h2 class="text-center">Le CV compact:</h2>
     <div>
         <table class="table table-dark">
@@ -239,7 +239,7 @@
     </div>
     <a href="/createSumary" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="etude">
     <h2 class="text-center">Les études:</h2>
     <div>
         <table class="table table-dark">
@@ -279,7 +279,7 @@
     </div>
     <a href="/createEducation" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="experience">
     <h2 class="text-center">Les expériences:</h2>
     <div>
         <table class="table table-dark">
@@ -324,7 +324,7 @@
     </div>
     <a href="/createExperience" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="service">
     <h2 class="text-center">Les Services:</h2>
     <div>
         <table class="table table-dark">
@@ -362,7 +362,7 @@
     </div>
     <a href="/createService" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="portfolio">
     <h2 class="text-center">Le Portfolio:</h2>
     <div>
         <table class="table table-dark">
@@ -406,7 +406,7 @@
     </div>
     <a href="/createPortfolio" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="contact">
     <h2 class="text-center">Les Mails:</h2>
     <div>
         <table class="table table-dark">
@@ -474,7 +474,7 @@
     </div>
     <a href="/createPhone" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section id="couleur">
     <h2 class="text-center">Les couleurs:</h2>
     <div>
         <table class="table table-dark">
