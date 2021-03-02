@@ -37,7 +37,9 @@ class DatabaseSeeder extends Seeder
             MailSeeder::class,
             PhoneSeeder::class,
 
-            FooterSeeder::class
+            FooterSeeder::class,
+
+            ColorSeeder::class,
         ]);
     }
 }

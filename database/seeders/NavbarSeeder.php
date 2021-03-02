@@ -22,15 +22,15 @@ class NavbarSeeder extends Seeder
                 ],
                 [
                     "li" => "about",
-                    "href" => "/about"
+                    "href" => "#about"
                 ],
                 [
                     "li" => "section2",
-                    "href" => "/section2"
+                    "href" => "#section2"
                 ],
                 [
                     "li" => "section3",
-                    "href" => "/section3"
+                    "href" => "#section3"
                 ],
                 [
                     "li" => "Backoffice",

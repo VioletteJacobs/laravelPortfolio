@@ -39,7 +39,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createNav" class="btn btn-success text-center">Créer</a>
 </section>
 {{-- titre --}}
 <section>
@@ -78,7 +78,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createTitre" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les informations personnelles </h2>
@@ -114,7 +114,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createInfo" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Des anecdotes à propos :</h2>
@@ -156,7 +156,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createAbout" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les compétences:</h2>
@@ -194,7 +194,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createSkill" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Le CV compact:</h2>
@@ -237,7 +237,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createSumary" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les études:</h2>
@@ -277,7 +277,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createEducation" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les expériences:</h2>
@@ -322,7 +322,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createExperience" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les Services:</h2>
@@ -360,7 +360,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createService" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Le Portfolio:</h2>
@@ -404,7 +404,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createPortfolio" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les Mails:</h2>
@@ -438,7 +438,7 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createMail" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
     <h2 class="text-center">Les téléphones:</h2>
@@ -472,7 +472,43 @@
             </tbody>
           </table>
     </div>
-
+    <a href="/createPhone" class="btn btn-success text-center">Créer</a>
+</section>
+<section>
+    <h2 class="text-center">Les couleurs:</h2>
+    <div>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Code RGBA</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($DBCouleur as $item)
+                <tr>
+                    <th scope="row">{{$item->id}}</th>
+                    <td>{{$item->nom}}</td>
+                    <td>{{$item->rgba}}</td>
+                    <td> 
+                        <form action="/delete-color/{{$item->id}}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/edit-color/{{$item->id}}" class="btn btn-warning">Edit</a>
+                    </td>
+                </tr>
+                @endforeach
+              
+            </tbody>
+          </table>
+    </div>
+    <a href="/createColor" class="btn btn-success text-center">Créer</a>
 </section>
     
 @endsection

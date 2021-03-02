@@ -15,7 +15,13 @@
               <h4 class="title"><a href="">{{$item->titre}}</a></h4>
               <p class="description">{{$item->p}}</p>
             </div>
-          </div>  
+          </div>
+          {{-- @if ((count($DBServices) % 4 === 0 && $loop->iteration == (count($DBServices)/2)) || (count($DBServices) %  != 0 && $loop->iteration == (ceil(count($DBServices)/2))))
+          </div>
+          <div class="col-lg-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box">
+            </div>
+            @endif --}}
         @endforeach
       </div>
     </div>

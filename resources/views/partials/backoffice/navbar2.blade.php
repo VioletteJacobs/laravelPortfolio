@@ -2,9 +2,7 @@
 
     <nav class="nav-menu d-none d-lg-block">
       <ul>
-        <li class="active"><a href="/">Template</a></li>
-        <li class="active"><a href="/createNav">Create Nav</a></li>
-          
+        <li class="active"><a href="/">Template</a></li>  
       </ul>
     </nav><!-- .nav-menu -->
 

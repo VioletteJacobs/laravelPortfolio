@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutInfo;
 use App\Models\AboutP2;
+use App\Models\Color;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Footer;
@@ -43,8 +44,9 @@ class BackController extends Controller
         $DBPhone = Phone::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
+        $DBCouleur = Color::all();
 
-       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter")); 
+       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBCouleur")); 
     }
 
 
@@ -107,6 +109,11 @@ class BackController extends Controller
     }
     public function destroyPhone($id){
         $destroy = Phone::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+    public function destroyColor($id){
+        $destroy = Color::find($id);
         $destroy->delete();
         return redirect()->back();
     }
@@ -442,6 +449,355 @@ class BackController extends Controller
         return redirect('/');
 
     }
+    public function editColor($id){
+        $edit = Color::find($id);
 
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.editColor", compact('edit', "DBFooter", "DBSocial"));
+    }
+
+    public function updateColor(Request $request, $id){
+
+        $validation = $request->validate([
+            "nom" => "required|min:3|max:20",
+            "rgba" => "required|max:90",
+
+        ]);
+        
+        $update = Color::find($id);
+        
+        $update->nom = $request->nom;
+        $update->rgba = $request->rgba;
+
+
+        $update->save();
+        return redirect('/');
+
+    }
+
+
+
+    // create
+    Public function createTitre(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createTitre", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeTitre(Request $request){
+
+        $validation = $request->validate([
+            "titre" => "required|min:5|max:100",
+            "span" => "required|max:100",
+            "p" => "required|max:500",
+        ]);
+
+
+        $newEntry = new Titre;
+
+        $newEntry->titre = $request->titre;
+        $newEntry->span = $request->span;
+        $newEntry->p = $request->p;
+
+        $newEntry->save();
+
+        return redirect()->back();
+
+    }
+
+    Public function createNav(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createNav", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeNav(Request $request){
+
+        $validation = $request->validate([
+            "li" => "required|min:5|max:50",
+            "href" => "required|max:100"
+        ]);
+
+        $newEntry = new Navbar;
+
+        $newEntry->li = $request->li;
+        $newEntry->href = $request->href;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+
+
+    Public function createInfo(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createInfo", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeInfo(Request $request){
+
+        $validation = $request->validate([
+            "icon" => "required|min:5|max:50",
+            "titre" => "required|max:50",
+            "info" => "required|max:100",
+        ]);
+
+        $newEntry = new AboutInfo;
+
+        $newEntry->icon = $request->icon;
+        $newEntry->titre = $request->titre;
+        $newEntry->info = $request->info;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+
+
+    Public function createAbout(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createAbout", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeAbout(Request $request){
+
+        $validation = $request->validate([
+            "icon" => "required|min:5|max:50",
+            "color" => "required|max:50",
+            "span" => "required|max:50",
+            "strong" => "required|max:50",
+            "p" => "required|max:50",
+        ]);
+
+        $newEntry = new AboutP2;
+
+        $newEntry->icon = $request->icon;
+        $newEntry->color = $request->color;
+        $newEntry->span = $request->span;
+        $newEntry->strong = $request->strong;
+        $newEntry->p = $request->p;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createSumary(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createSumary", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeSumary(Request $request){
+
+        $validation = $request->validate([
+            "name" => "required|min:5|max:50",
+            "adresse" => "required|max:50",
+            "phone" => "required|max:50",
+            "mail" => "required|max:50",
+            "p" => "required|max:500",
+        ]);
+        
+        $newEntry = new Sumary;
+
+        $newEntry->name = $request->name;
+        $newEntry->adresse = $request->adresse;
+        $newEntry->phone = $request->phone;
+        $newEntry->mail = $request->mail;
+        $newEntry->p = $request->p;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createEducation(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createEducation", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeEducation(Request $request){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:100",
+            "years" => "required|max:100",
+            "school" => "required|max:100",
+            "p" => "required|max:500",
+        ]);
+
+        $newEntry = new Education;
+
+        $newEntry->title = $request->title;
+        $newEntry->years = $request->years;
+        $newEntry->school = $request->school;
+        $newEntry->p = $request->p;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createExperience(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createExperience", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeExperience(Request $request){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:100",
+            "years" => "required|max:100",
+            "name" => "required|max:100",
+            "task1" => "required|max:200",
+            "task2" => "required|max:200",
+            "task3" => "required|max:200",
+            "task4" => "required|max:200",
+        ]);
+
+        $newEntry = new Experience;
+
+        $newEntry->title = $request->title;
+        $newEntry->years = $request->years;
+        $newEntry->name = $request->name;
+        $newEntry->task1 = $request->task1;
+        $newEntry->task2 = $request->task2;
+        $newEntry->task3 = $request->task3;
+        $newEntry->task4 = $request->task4;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createSkill(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createSkill", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeSkill(Request $request){
+
+        $validation = $request->validate([
+            "language" => "required|min:2|max:50",
+            "val" => "required|max:10",
+            "valuenow" => "required",
+
+        ]);
+
+        $newEntry = new Skill;
+
+        $newEntry->language = $request->language;
+        $newEntry->val = $request->val;
+        $newEntry->valuenow = $request->valuenow;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createService(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createService", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeService(Request $request){
+
+        $validation = $request->validate([
+            "titre" => "required|min:5|max:50",
+            "icon" => "required|max:50",
+            "p" => "required|max:500",
+        ]);
+
+        $newEntry = new Service;
+
+        $newEntry->titre = $request->titre;
+        $newEntry->icon = $request->icon;
+        $newEntry->p = $request->p;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createPhone(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createPhone", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storePhone(Request $request){
+
+        $validation = $request->validate([
+            "phone" => "required",
+        ]);
+
+        $newEntry = new Phone;
+
+        $newEntry->phone = $request->phone;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+
+    Public function createMail(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createMail", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeMail(Request $request){
+
+        $validation = $request->validate([
+            "mail" => "required",
+        ]);
+
+        $newEntry = new Mail;
+
+        $newEntry->mail = $request->mail;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createPortfolio(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createPortfolio", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storePortfolio(Request $request){
+
+        $validation = $request->validate([
+            "title" => "required|min:5|max:20",
+            "img" => "required|max:90",
+            "p" => "required|max:100",
+            "filter" => "required|max:30",
+            "href1" => "required|max:90",
+            "href2" => "required|max:90",
+        ]);
+
+        $newEntry = new Portfolio;
+
+        $newEntry->title = $request->title;
+        $newEntry->img = $request->img;
+        $newEntry->p = $request->p;
+        $newEntry->filter = $request->img;
+        $newEntry->href1 = $request->href1;
+        $newEntry->href2 = $request->href2;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
+    Public function createColor(){
+        $DBSocial = Social::all();
+        $DBFooter = Footer::all();
+        return view ("pages.backoffice.create.createColor", compact("DBFooter", "DBSocial"));
+    }
+    Public Function storeColor(Request $request){
+
+        $validation = $request->validate([
+            "nom" => "required|min:3|max:20",
+            "rgba" => "required|max:90",
+        ]);
+
+        $newEntry = new Color;
+
+        $newEntry->nom = $request->nom;
+        $newEntry->rgba = $request->rgba;
+
+        $newEntry->save();
+        return redirect()->back();
+
+    }
     
 }

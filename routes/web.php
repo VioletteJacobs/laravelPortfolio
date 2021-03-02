@@ -64,6 +64,9 @@ Route::post('/update-mail/{id}', [BackController::class,"updateMail"]);
 Route::get('/edit-phone/{id}',[BackController::class,'editPhone']);
 Route::post('/update-phone/{id}', [BackController::class,"updatePhone"]);
 
+Route::get('/edit-color/{id}',[BackController::class,'editColor']);
+Route::post('/update-color/{id}', [BackController::class,"updateColor"]);
+
 
 // delete
 Route::post('/delete-nav/{id}', [BackController::class,"destroyNav"]);
@@ -78,6 +81,44 @@ Route::post('/delete-service/{id}', [BackController::class,"destroyService"]);
 Route::post('/delete-portfolio/{id}', [BackController::class,"destroyPortfolio"]);
 Route::post('/delete-mail/{id}', [BackController::class,"destroyMail"]);
 Route::post('/delete-phone/{id}', [BackController::class,"destroyPhone"]);
+Route::post('/delete-color/{id}', [BackController::class,"destroyColor"]);
 
+// create
+Route::get('/createNav',[BackController::class,"createNav"]);
+Route::post('/add-nav', [BackController::class,"storeNav"]);
 
+Route::get('/createTitre',[BackController::class,"createTitre"]);
+Route::post('/add-titre', [BackController::class,"storeTitre"]);
 
+Route::get('/createInfo',[BackController::class,"createInfo"]);
+Route::post('/add-info', [BackController::class,"storeInfo"]);
+
+Route::get('/createAbout',[BackController::class,"createAbout"]);
+Route::post('/add-about', [BackController::class,"storeAbout"]);
+
+Route::get('/createSumary',[BackController::class,"createSumary"]);
+Route::post('/add-sumary', [BackController::class,"storeSumary"]);
+
+Route::get('/createEducation',[BackController::class,"createEducation"]);
+Route::post('/add-education', [BackController::class,"storeEducation"]);
+
+Route::get('/createExperience',[BackController::class,"createExperience"]);
+Route::post('/add-experience', [BackController::class,"storeExperience"]);
+
+Route::get('/createSkill',[BackController::class,"createSkill"]);
+Route::post('/add-skill', [BackController::class,"storeSkill"]);
+
+Route::get('/createService',[BackController::class,"createService"]);
+Route::post('/add-service', [BackController::class,"storeService"]);
+
+Route::get('/createPortfolio',[BackController::class,"createPortfolio"]);
+Route::post('/add-portfolio', [BackController::class,"storePortfolio"]);
+
+Route::get('/createMail',[BackController::class,"createMail"]);
+Route::post('/add-mail', [BackController::class,"storeMail"]);
+
+Route::get('/createPhone',[BackController::class,"createPhone"]);
+Route::post('/add-phone', [BackController::class,"storePhone"]);
+
+Route::get('/createColor',[BackController::class,"createColor"]);
+Route::post('/add-color', [BackController::class,"storeColor"]);

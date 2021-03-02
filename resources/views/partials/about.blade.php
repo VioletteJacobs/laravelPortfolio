@@ -1,5 +1,5 @@
 <!-- ======= About Me Section ======= -->
-<section id="about" class="about">
+<section id="{{$DBTitre[0]->span}}" class="about">
     <div class="container">
 
       <div class="section-title">
@@ -17,6 +17,13 @@
                 <ul>
                   @foreach ($DBAboutInfo as $item)
                       <li><i class="{{$item->icon}}"></i> <strong>{{$item->titre}}</strong>{{$item->info}}</li>
+
+                   @if ((count($DBAboutInfo) % 2 === 0 && $loop->iteration == (count($DBAboutInfo)/2)) || (count($DBAboutInfo) % 2 != 0 && $loop->iteration == (ceil(count($DBAboutInfo)/2))))
+                </ul>
+              </div>
+            <div class="col-lg-6">
+                  <ul>
+                @endif
                   @endforeach
                 </ul>
               </div>
