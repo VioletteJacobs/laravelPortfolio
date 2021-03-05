@@ -8,5 +8,5 @@
     @include('partials.portfolio')
     @include('partials.contact')
 </main>
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+<a href="#" class="back-to-top" ><i class="icofont-simple-up" style="background-color: #{{$DBColor[3]->rgba}}"></i></a>
 @endsection

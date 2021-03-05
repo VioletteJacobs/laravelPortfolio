@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AboutInfo;
 use App\Models\AboutP2;
 use App\Models\Bg;
+use App\Models\Color;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Footer;
@@ -44,7 +45,8 @@ class TemplateController extends Controller
         $DBPhone = Phone::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
+        $DBColor = Color::all();
 
-        return view ("welcome",compact ("DBNav", "DBHero", "DBTitre","DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter"));
+        return view ("welcome",compact ("DBNav", "DBHero", "DBTitre","DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBColor"));
     }
 }

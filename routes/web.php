@@ -84,7 +84,7 @@ Route::post('/delete-phone/{id}', [BackController::class,"destroyPhone"]);
 Route::post('/delete-color/{id}', [BackController::class,"destroyColor"]);
 
 // create
-Route::get('/createNav',[BackController::class,"createNav"]);
+Route::get('/createNav',[BackController::class,"createNav"])->name("createNav");
 Route::post('/add-nav', [BackController::class,"storeNav"]);
 
 Route::get('/createTitre',[BackController::class,"createTitre"]);

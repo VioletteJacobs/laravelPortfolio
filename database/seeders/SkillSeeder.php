@@ -22,14 +22,14 @@ class SkillSeeder extends Seeder
                   "valuenow" => "100"  
                 ],
                 [
-                    "language" => "HTML",
-                    "val" =>"100%",
-                    "valuenow" => "100"  
+                    "language" => "CSS",
+                    "val" =>"80%",
+                    "valuenow" => "80"  
                   ],
                   [
-                    "language" => "HTML",
-                    "val" =>"100%",
-                    "valuenow" => "100"  
+                    "language" => "Javascript",
+                    "val" =>"60%",
+                    "valuenow" => "60"  
                   ],
                 
             ]

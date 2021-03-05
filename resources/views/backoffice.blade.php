@@ -1,12 +1,15 @@
 @extends('template.second')
 @section('content')
-<section class="container">
+<section class="container" class="container">
     <h1>Voici votre page Backoffice</h1>
     <span>Vous pourrez y modifier les éléments, en créer de nouveaux, modifier ou supprimer les anciens.</span>
 </section>
 {{-- nav --}}
-<section id="nav">
+<section id="nav" class="container">
     <h2 class="text-center">La barre de navigation : </h2>
+    {{-- <div>
+        @include('partials.navbar')
+    </div> --}}
     <div>
         <table class="table table-dark">
             <thead>
@@ -39,10 +42,10 @@
             </tbody>
           </table>
     </div>
-    <a href="/createNav" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createNav")}}" class="btn btn-success text-center">Créer</a>
 </section>
 {{-- titre --}}
-<section id="titre">
+<section id="titre" class="container">
     <h2 class="text-center">Les titres des sections : </h2>
     <div>
         <table class="table table-dark">
@@ -80,8 +83,11 @@
     </div>
     <a href="/createTitre" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="info">
+<section id="info" class="container">
     <h2 class="text-center">Les informations personnelles </h2>
+    <div>
+        @include('partials.about')
+    </div>
     <div>
         <table class="table table-dark">
             <thead>
@@ -116,7 +122,7 @@
     </div>
     <a href="/createInfo" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="perso">
+<section id="perso" class="container">
     <h2 class="text-center">Des anecdotes à propos :</h2>
     <div>
         <table class="table table-dark">
@@ -158,7 +164,7 @@
     </div>
     <a href="/createAbout" class="btn btn-success text-center">Créer</a>
 </section>
-<section class="competences">
+<section class="competences" class="container">
     <h2 class="text-center">Les compétences:</h2>
     <div>
         <table class="table table-dark">
@@ -196,9 +202,12 @@
     </div>
     <a href="/createSkill" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="cv">
-    <h2 class="text-center">Le CV compact:</h2>
+<section id="cv" class="container">
     <div>
+        @include('partials.resume')
+    </div>
+    <div>
+        <h2 class="text-center">Le CV compact:</h2>
         <table class="table table-dark">
             <thead>
               <tr>
@@ -239,7 +248,7 @@
     </div>
     <a href="/createSumary" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="etude">
+<section id="etude" class="container">
     <h2 class="text-center">Les études:</h2>
     <div>
         <table class="table table-dark">
@@ -279,7 +288,7 @@
     </div>
     <a href="/createEducation" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="experience">
+<section id="experience" class="container">
     <h2 class="text-center">Les expériences:</h2>
     <div>
         <table class="table table-dark">
@@ -306,7 +315,6 @@
                     <td>{{$item->task1}}</td>
                     <td>{{$item->task2}}</td>
                     <td>{{$item->task3}}</td>
-                    <td>{{$item->task4}}</td>
                     <td> 
                         <form action="/delete-experience/{{$item->id}}" method="POST">
                             @csrf
@@ -324,8 +332,11 @@
     </div>
     <a href="/createExperience" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="service">
+<section id="service" class="container">
     <h2 class="text-center">Les Services:</h2>
+    <div>
+        @include('partials.services')
+    </div>
     <div>
         <table class="table table-dark">
             <thead>
@@ -362,8 +373,11 @@
     </div>
     <a href="/createService" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="portfolio">
+<section id="portfolio" class="container">
     <h2 class="text-center">Le Portfolio:</h2>
+    <div>
+        @include('partials.portfolio')
+    </div>
     <div>
         <table class="table table-dark">
             <thead>
@@ -406,9 +420,16 @@
     </div>
     <a href="/createPortfolio" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="contact">
-    <h2 class="text-center">Les Mails:</h2>
+<section>
+
+    <h2 class="text-center">Les contacts</h2>
     <div>
+        @include('partials.contact')
+    </div>
+</section>
+<section id="contact" class="container">
+    <h2 class="text-center">Les Mails:</h2>
+    <div >
         <table class="table table-dark">
             <thead>
               <tr>
@@ -440,7 +461,7 @@
     </div>
     <a href="/createMail" class="btn btn-success text-center">Créer</a>
 </section>
-<section>
+<section class="container">
     <h2 class="text-center">Les téléphones:</h2>
     <div>
         <table class="table table-dark">
@@ -474,7 +495,7 @@
     </div>
     <a href="/createPhone" class="btn btn-success text-center">Créer</a>
 </section>
-<section id="couleur">
+<section id="couleur" class="container">
     <h2 class="text-center">Les couleurs:</h2>
     <div>
         <table class="table table-dark">
@@ -488,7 +509,7 @@
               </tr>
             </thead>
             <tbody>
-                @foreach ($DBCouleur as $item)
+                @foreach ($DBColor as $item)
                 <tr>
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->nom}}</td>

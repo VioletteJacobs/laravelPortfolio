@@ -46,9 +46,9 @@ class BackController extends Controller
         $DBPhone = Phone::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        $DBCouleur = Color::all();
+        $DBColor = Color::all();
 
-       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBCouleur")); 
+       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBColor")); 
     }
 
 
@@ -126,10 +126,10 @@ class BackController extends Controller
     // edit & update
     public function editNav($id){
         $edit = Navbar::find($id);
-
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editNav", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editNav", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateNav(Request $request, $id){
@@ -148,10 +148,10 @@ class BackController extends Controller
     }
     public function editTitre($id){
         $edit = Titre::find($id);
-
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editTitre", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editTitre", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateTitre(Request $request, $id){
@@ -175,9 +175,10 @@ class BackController extends Controller
     public function editInfo($id){
         $edit = AboutInfo::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editinfo", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editinfo", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateInfo(Request $request, $id){
@@ -201,9 +202,10 @@ class BackController extends Controller
     public function editAbout($id){
         $edit = AboutP2::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editAbout", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editAbout", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateAbout(Request $request, $id){
@@ -231,9 +233,10 @@ class BackController extends Controller
     public function editSumary($id){
         $edit = Sumary::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editSumary", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editSumary", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateSumary(Request $request, $id){
@@ -280,17 +283,19 @@ class BackController extends Controller
     public function editSkill($id){
         $edit = Skill::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editSkill", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editSkill", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function editEducation($id){
         $edit = Education::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editEducation", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editEducation", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateEducation(Request $request, $id){
@@ -316,9 +321,10 @@ class BackController extends Controller
     public function editExperience($id){
         $edit = Experience::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editExperience", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editExperience", compact('edit', "DBFooter", "DBSocial", "DBColor"));
     }
 
     public function updateExperience(Request $request, $id){
@@ -350,9 +356,10 @@ class BackController extends Controller
     public function editService($id){
         $edit = Service::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editService", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editService", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateService(Request $request, $id){
@@ -376,9 +383,10 @@ class BackController extends Controller
     public function editPhone($id){
         $edit = Phone::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editPhone", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editPhone", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updatePhone(Request $request, $id){
@@ -398,10 +406,10 @@ class BackController extends Controller
     }
     public function editMail($id){
         $edit = Mail::find($id);
-
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editMail", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editMail", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateMail(Request $request, $id){
@@ -422,9 +430,10 @@ class BackController extends Controller
     public function editPortfolio($id){
         $edit = Portfolio::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editPortfolio", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editPortfolio", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updatePortfolio(Request $request, $id){
@@ -454,9 +463,10 @@ class BackController extends Controller
     public function editColor($id){
         $edit = Color::find($id);
 
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.editColor", compact('edit', "DBFooter", "DBSocial"));
+        return view ("pages.backoffice.editColor", compact('edit', "DBFooter", "DBSocial","DBColor"));
     }
 
     public function updateColor(Request $request, $id){
@@ -482,9 +492,10 @@ class BackController extends Controller
 
     // create
     Public function createTitre(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createTitre", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createTitre", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeTitre(Request $request){
 
@@ -508,9 +519,10 @@ class BackController extends Controller
     }
 
     Public function createNav(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createNav", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createNav", compact("DBFooter", "DBSocial",'DBColor'));
     }
     Public Function storeNav(Request $request){
 
@@ -531,9 +543,10 @@ class BackController extends Controller
 
 
     Public function createInfo(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createInfo", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createInfo", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeInfo(Request $request){
 
@@ -556,9 +569,10 @@ class BackController extends Controller
 
 
     Public function createAbout(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createAbout", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createAbout", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeAbout(Request $request){
 
@@ -583,9 +597,10 @@ class BackController extends Controller
 
     }
     Public function createSumary(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createSumary", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createSumary", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeSumary(Request $request){
 
@@ -610,9 +625,10 @@ class BackController extends Controller
 
     }
     Public function createEducation(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createEducation", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createEducation", compact("DBFooter", "DBSocial", "DBColor"));
     }
     Public Function storeEducation(Request $request){
 
@@ -635,9 +651,10 @@ class BackController extends Controller
 
     }
     Public function createExperience(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createExperience", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createExperience", compact("DBFooter", "DBSocial", "DBColor"));
     }
     Public Function storeExperience(Request $request){
 
@@ -666,9 +683,10 @@ class BackController extends Controller
 
     }
     Public function createSkill(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createSkill", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createSkill", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeSkill(Request $request){
 
@@ -690,9 +708,10 @@ class BackController extends Controller
 
     }
     Public function createService(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createService", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createService", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeService(Request $request){
 
@@ -713,9 +732,10 @@ class BackController extends Controller
 
     }
     Public function createPhone(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createPhone", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createPhone", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storePhone(Request $request){
 
@@ -733,9 +753,10 @@ class BackController extends Controller
     }
 
     Public function createMail(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createMail", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createMail", compact("DBFooter", "DBSocial", "DBColor"));
     }
     Public Function storeMail(Request $request){
 
@@ -752,9 +773,10 @@ class BackController extends Controller
 
     }
     Public function createPortfolio(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createPortfolio", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createPortfolio", compact("DBFooter", "DBSocial", "DBColor"));
     }
     Public Function storePortfolio(Request $request){
 
@@ -781,9 +803,10 @@ class BackController extends Controller
 
     }
     Public function createColor(){
+        $DBColor = Color::all();
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
-        return view ("pages.backoffice.create.createColor", compact("DBFooter", "DBSocial"));
+        return view ("pages.backoffice.create.createColor", compact("DBFooter", "DBSocial","DBColor"));
     }
     Public Function storeColor(Request $request){
 
