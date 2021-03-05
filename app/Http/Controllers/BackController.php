@@ -9,6 +9,7 @@ use App\Models\Color;
 use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Footer;
+use App\Models\Galerie;
 use App\Models\Hero;
 use App\Models\Mail;
 use App\Models\Navbar;
@@ -22,6 +23,7 @@ use App\Models\Sumary;
 use App\Models\Titre;
 use App\Models\TitreContact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Polyfill\Intl\Idn\Info;
 
 class BackController extends Controller
@@ -47,8 +49,9 @@ class BackController extends Controller
         $DBSocial = Social::all();
         $DBFooter = Footer::all();
         $DBColor = Color::all();
+        $DBGalerie = Galerie::all();
 
-       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBColor")); 
+       return view ("backoffice", compact ("DBNav", "DBHero", "DBTitre", "DBBG", "DBTitre", "DBAboutInfo", "DBAboutP2","DBSkills", "DBResumeTitre", "DBSumary", "DBEducation", "DBExperiences", "DBServices", "DBPortfolio", "DBTitreContact", "DBMail", "DBPhone", "DBSocial", "DBFooter", "DBColor", "DBGalerie")); 
     }
 
 
@@ -824,5 +827,33 @@ class BackController extends Controller
         return redirect()->back();
 
     }
-    
+
+    // storage
+    // public function createbg(){
+    //     return view ("pages.backoffice.");
+    // }
+
+    public function storebg (Request $request){
+        $store = new Galerie;
+        $store->src = $request->file("src")->hashName();
+        $store->save();
+        Storage::put('public/img', $request->file("src"));
+        return redirect()->back();
+    }
+
+    public function updatebg (Request $request, $id){
+        $validate=$request->validate([
+            "img"=> "required|min:1|max:1000"
+        ]);
+        $update = Bg::find($id);
+        Storage::delete("public/img/".$update->img);
+        $update->img = $request->file("img")->hashName();
+        $update->save();
+        Storage::put("public/img", $request->file("img"));
+        return redirect("/");
+    }
+    // public function download($id){
+    //     $down = Membre::find($id);
+    //     return storage::download('public/img/'.$down->src);
+    // }
 }

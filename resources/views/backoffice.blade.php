@@ -44,6 +44,67 @@
     </div>
     <a href="{{route("createNav")}}" class="btn btn-success text-center">Créer</a>
 </section>
+<section id="nav" class="container">
+    <h2 class="text-center">La bannière Hero : </h2>
+    <div>
+        @include('partials.hero')
+    </div>
+    <div class="mt-5">
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Titre</th>
+                <th scope="col">fonction</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($DBHero as $item)
+                <tr>
+                    <th scope="row">{{$item->id}}</th>
+                    <td>{{$item->titre}}</td>
+                    <td>{{$item->h2}}</td>
+
+                </tr>
+                @endforeach
+              
+            </tbody>
+          </table>
+    </div>
+    <div>
+        <h2 class='text-center'>Modifier l'image: </h2>
+        {{-- message d'erreur --}}
+    @if ($errors->any()) 
+        <div class="alert alert-danger"> 
+            <ul> 
+                @foreach ($errors->all() as $error) 
+                <li>{{ $error }}</li> 
+                @endforeach 
+            </ul>
+        </div> 
+    @endif
+    <div>
+        <form action="/update/{{$DBBG[0]->id}}" method="POST" enctype="multipart/form-data">
+            @csrf
+                <input type="file" name="img" value="{{old("img") ? old("img") :  $DBBG[0]->img}}">
+                <button type="submit" class="btn btn-success">Ajouter</button>
+    
+                {{-- @foreach ($DBGalerie as $item)
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                      <input type="radio" aria-label="Radio button for following text input" value="{{$item->src}}" name="src">
+                      </div>
+                    </div>
+                    <img src="{{asset('storage/img/'.$item->src)}}" alt="" height="100px">
+                </div>
+                @endforeach --}}
+
+            {{-- <input type="file" name="src" value="{{old("src")? old("src"): $DBBG[0]->src}}"> --}}
+        </form>
+    </div>
+    </div>
+</section>
 {{-- titre --}}
 <section id="titre" class="container">
     <h2 class="text-center">Les titres des sections : </h2>
@@ -81,7 +142,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createTitre" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createTitre")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="info" class="container">
     <h2 class="text-center">Les informations personnelles </h2>
@@ -120,7 +181,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createInfo" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createInfo")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="perso" class="container">
     <h2 class="text-center">Des anecdotes à propos :</h2>
@@ -162,7 +223,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createAbout" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createAbout")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section class="competences" class="container">
     <h2 class="text-center">Les compétences:</h2>
@@ -200,7 +261,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createSkill" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createSkill")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="cv" class="container">
     <div>
@@ -246,7 +307,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createSumary" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createSumary")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="etude" class="container">
     <h2 class="text-center">Les études:</h2>
@@ -286,7 +347,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createEducation" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createEducation")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="experience" class="container">
     <h2 class="text-center">Les expériences:</h2>
@@ -330,7 +391,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createExperience" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createExperience")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="service" class="container">
     <h2 class="text-center">Les Services:</h2>
@@ -371,7 +432,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createService" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createService")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="portfolio" class="container">
     <h2 class="text-center">Le Portfolio:</h2>
@@ -418,7 +479,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createPortfolio" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createPortfolio")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section>
 
@@ -459,7 +520,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createMail" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createMail")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section class="container">
     <h2 class="text-center">Les téléphones:</h2>
@@ -493,7 +554,7 @@
             </tbody>
           </table>
     </div>
-    <a href="/createPhone" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createPhone")}}" class="btn btn-success text-center">Créer</a>
 </section>
 <section id="couleur" class="container">
     <h2 class="text-center">Les couleurs:</h2>
@@ -529,7 +590,44 @@
             </tbody>
           </table>
     </div>
-    <a href="/createColor" class="btn btn-success text-center">Créer</a>
+    <a href="{{route("createColor")}}" class="btn btn-success text-center">Créer</a>
 </section>
     
+<section class="container" id="galerie">
+    <h2 class="text-center">Galerie d'images</h2>
+    <p>Vous pouvez ajouter ici vos fichiers photos afin de pouvoir modifier les différentes images (dans le portfolio, l'image de bannière, celle de la section about et du footer.</p>
+    <div>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Image</th>
+                <th scope="col">SRC</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($DBGalerie as $item)
+                <tr>
+                    <th scope="row">{{$item->id}}</th>
+                    <td>
+                        <img src="{{asset('storage/img/'.$item->src)}}" height="200px" alt="">
+                    </td>
+                    <td>{{$item->src}}</td>
+                </tr>
+                @endforeach
+              
+            </tbody>
+          </table>
+    </div>
+    <div>
+        <form action="/files" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="src">
+            <button type="submit" class="btn btn-primary">
+                Ajouter
+            </button>
+        </form>
+        
+    </div>
+</section>
 @endsection

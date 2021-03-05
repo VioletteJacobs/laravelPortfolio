@@ -16,7 +16,7 @@
               <div class="col-lg-6">
                 <ul>
                   @foreach ($DBAboutInfo as $item)
-                      <li><i class="{{$item->icon}}" style="color: #{{$DBColor[3]->rgba}}"></i> <strong>{{$item->titre}}</strong>{{$item->info}}</li>
+                      <li><i class="{{$item->icon}}" style="color: #{{$DBColor[0]->rgba}}"></i> <strong>{{$item->titre}}</strong>{{$item->info}}</li>
                    @if ((count($DBAboutInfo) % 2 === 0 && $loop->iteration == (count($DBAboutInfo)/2)) || (count($DBAboutInfo) % 2 != 0 && $loop->iteration == (ceil(count($DBAboutInfo)/2))))
                 </ul>
               </div>
@@ -44,7 +44,7 @@
               <div class="progress">
                 <span class="skill">{{$item->language}}<i class="val">{{$item->val}}</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="{{$item->valuenow}}" aria-valuemin="0" aria-valuemax="100" style="background-color: #{{$DBColor[3]->rgba}}"></div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{$item->valuenow}}" aria-valuemin="0" aria-valuemax="100" style="background-color: #{{$DBColor[0]->rgba}}"></div>
                 </div>
             </div>
             @endforeach

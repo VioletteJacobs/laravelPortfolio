@@ -15,7 +15,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="info-box">
-                <i class="{{$DBTitreContact[0]->icon}}" style="background-color: #{{$DBColor[3]->rgba}}" style="color: #{{$DBColor[3]->rgba}}"></i>
+                <i class="{{$DBTitreContact[0]->icon}}" style="background-color: #{{$DBColor[0]->rgba}}" style="color: #{{$DBColor[0]->rgba}}"></i>
                 <h3>{{$DBTitreContact[0]->title}}</h3>
                 <div class="social-links">
                   @foreach ($DBSocial as $item)
@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-6">
               <div class="info-box mt-4">
-                <i class="{{$DBTitreContact[1]->icon}}" style="background-color: #{{$DBColor[3]->rgba}}" style="color: #{{$DBColor[3]->rgba}}"></i>
+                <i class="{{$DBTitreContact[1]->icon}}" style="background-color: #{{$DBColor[0]->rgba}}" style="color: #{{$DBColor[0]->rgba}}"></i>
                 <h3>{{$DBTitreContact[1]->title}}</h3>
 
                 @foreach ($DBMail as $item)
@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-6">
               <div class="info-box mt-4">
-                <i class="{{$DBTitreContact[2]->icon}}" style="background-color: #{{$DBColor[3]->rgba}}"></i>
+                <i class="{{$DBTitreContact[2]->icon}}" style="background-color: #{{$DBColor[0]->rgba}}"></i>
                 <h3>{{$DBTitreContact[2]->title}}</h3>
 
                 @foreach ($DBPhone as $item)
@@ -74,7 +74,7 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit" style="background-color: #{{$DBColor[3]->rgba}}">Send Message</button></div>
+            <div class="text-center"><button type="submit" style="background-color: #{{$DBColor[0]->rgba}}">Send Message</button></div>
           </form>
         </div>
 

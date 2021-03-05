@@ -13,7 +13,7 @@
           <h3 class="resume-title">{{$DBResumeTitre[0]->titre}}</h3>
           @foreach ($DBSumary as $item)
             <div class="resume-item pb-0">
-              <h4 style="color: #{{$DBColor[3]->rgba}}">{{$item->name}}</h4>
+              <h4 style="color: #{{$DBColor[0]->rgba}}">{{$item->name}}</h4>
               <p><em>{{$item->p}}</em></p>
               <p>
               <ul>
@@ -29,7 +29,7 @@
           <h3 class="resume-title">{{$DBResumeTitre[1]->titre}}</h3>
           @foreach ($DBEducation as $item)
             <div class="resume-item">
-              <h4 style="color: #{{$DBColor[3]->rgba}}">{{$item->title}}</h4>
+              <h4 style="color: #{{$DBColor[0]->rgba}}">{{$item->title}}</h4>
               <h5>{{$item->years}}</h5>
               <p><em>{{$item->shool}}</em></p>
               <p>{{$item->p}}</p>
@@ -41,7 +41,7 @@
           <h3 class="resume-title">{{$DBResumeTitre[2]->titre}}</h3>
           @foreach ($DBExperiences as $item)
             <div class="resume-item">
-              <h4 style="color: #{{$DBColor[3]->rgba}}">{{$item->title}}</h4>
+              <h4 style="color: #{{$DBColor[0]->rgba}}">{{$item->title}}</h4>
               <h5>{{$item->years}}</h5>
               <p><em>{{$item->name}}</em></p>
               <p>

@@ -18,9 +18,9 @@ class BgSeeder extends Seeder
             [
                 "img" => "assets/img/hero-bg.jpg"
             ],
-            [
-                "img" => "assets/img/code-bg.jpeg"
-            ],
+        //     [
+        //         "img" => "assets/img/code-bg.jpeg"
+        //     ],
 
         ]);
     }

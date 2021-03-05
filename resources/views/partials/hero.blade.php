@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="hero" style="background: url('{{asset($DBBG[1]->img)}}')">
+<section id="hero" style="background: url('{{asset("storage/img/".$DBBG[0]->img)}}')">
     <div class="hero-container">
       @foreach ($DBHero as $item)
           <h1>{{$item->titre}}</h1>

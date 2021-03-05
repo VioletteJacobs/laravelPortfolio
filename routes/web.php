@@ -87,38 +87,43 @@ Route::post('/delete-color/{id}', [BackController::class,"destroyColor"]);
 Route::get('/createNav',[BackController::class,"createNav"])->name("createNav");
 Route::post('/add-nav', [BackController::class,"storeNav"]);
 
-Route::get('/createTitre',[BackController::class,"createTitre"]);
+Route::get('/createTitre',[BackController::class,"createTitre"])->name("createTitre");
 Route::post('/add-titre', [BackController::class,"storeTitre"]);
 
-Route::get('/createInfo',[BackController::class,"createInfo"]);
+Route::get('/createInfo',[BackController::class,"createInfo"])->name("createInfo");
 Route::post('/add-info', [BackController::class,"storeInfo"]);
 
-Route::get('/createAbout',[BackController::class,"createAbout"]);
+Route::get('/createAbout',[BackController::class,"createAbout"])->name("createAbout");
 Route::post('/add-about', [BackController::class,"storeAbout"]);
 
-Route::get('/createSumary',[BackController::class,"createSumary"]);
+Route::get('/createSumary',[BackController::class,"createSumary"])->name("createSumary");
 Route::post('/add-sumary', [BackController::class,"storeSumary"]);
 
-Route::get('/createEducation',[BackController::class,"createEducation"]);
+Route::get('/createEducation',[BackController::class,"createEducation"])->name("createEducation");
 Route::post('/add-education', [BackController::class,"storeEducation"]);
 
-Route::get('/createExperience',[BackController::class,"createExperience"]);
+Route::get('/createExperience',[BackController::class,"createExperience"])->name("createExperience");
 Route::post('/add-experience', [BackController::class,"storeExperience"]);
 
-Route::get('/createSkill',[BackController::class,"createSkill"]);
+Route::get('/createSkill',[BackController::class,"createSkill"])->name("createSkill");
 Route::post('/add-skill', [BackController::class,"storeSkill"]);
 
-Route::get('/createService',[BackController::class,"createService"]);
+Route::get('/createService',[BackController::class,"createService"])->name("createService");
 Route::post('/add-service', [BackController::class,"storeService"]);
 
-Route::get('/createPortfolio',[BackController::class,"createPortfolio"]);
+Route::get('/createPortfolio',[BackController::class,"createPortfolio"])->name("createPortfolio");
 Route::post('/add-portfolio', [BackController::class,"storePortfolio"]);
 
-Route::get('/createMail',[BackController::class,"createMail"]);
+Route::get('/createMail',[BackController::class,"createMail"])->name("createMail");
 Route::post('/add-mail', [BackController::class,"storeMail"]);
 
-Route::get('/createPhone',[BackController::class,"createPhone"]);
+Route::get('/createPhone',[BackController::class,"createPhone"])->name("createPhone");
 Route::post('/add-phone', [BackController::class,"storePhone"]);
 
-Route::get('/createColor',[BackController::class,"createColor"]);
+Route::get('/createColor',[BackController::class,"createColor"])->name("createColor");
 Route::post('/add-color', [BackController::class,"storeColor"]);
+
+// storage
+
+Route::post('/files',[BackController::class, "storebg"]);
+Route::post("update/{id}",[BackController::class, "updatebg"]);

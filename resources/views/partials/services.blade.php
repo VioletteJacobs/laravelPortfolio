@@ -11,7 +11,7 @@
         @foreach ($DBServices as $item)
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
-              <div class="icon" style="background-color: #{{$DBColor[3]->rgba}}"><i class="{{$item->icon}}" ></i></div>
+              <div class="icon" style="background-color: #{{$DBColor[0]->rgba}}"><i class="{{$item->icon}}" ></i></div>
               <h4 class="title"><a href="">{{$item->titre}}</a></h4>
               <p class="description">{{$item->p}}</p>
             </div>

@@ -19,18 +19,6 @@ class ColorSeeder extends Seeder
                 "nom" => "pêche",
                 "rgba" => "d11644"
             ],
-            [
-                "nom" => "olive",
-                "rgba" => "878f84"
-            ],
-            [
-                "nom" => "aubergine",
-                "rgba" => "584053"
-            ],
-            [
-                "nom" => "bordeaux",
-                "rgba" => "a77376"
-            ],
 
         ]);
     }
